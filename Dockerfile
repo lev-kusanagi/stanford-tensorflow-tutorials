@@ -22,8 +22,8 @@ RUN apt-get install unzip
 RUN mkdir assignments/chatbot/data
 RUN unzip cornell_movie_dialogs_corpus.zip -d assignments/chatbot/data/.
 RUN  add-apt-repository ppa:deadsnakes/ppa \
-     && apt-get update \
-     && apt-get install python3.6 \
-     && apt-get install python3.6-pip \
-     && apt-get install python3.6-venv
+RUN apt-get update 
+RUN apt-get install python3.6 
+RUN apt-get install python3.6-pip 
+RUN apt-get install python3.6-venv
 RUN pip install -r setup/requirements.txt
