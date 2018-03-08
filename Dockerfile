@@ -25,6 +25,6 @@ RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update 
 RUN apt-get install python3.6 -y
-RUN apt-get install pip -y
+RUN apt-get install python3-pip -y
 RUN apt-get install python3.6-venv -y
 RUN pip install -r setup/requirements.txt
