@@ -26,3 +26,4 @@ RUN  add-apt-repository ppa:deadsnakes/ppa \
      && apt-get install python3.6 \
      && apt-get install python3.6-pip \
      && apt-get install python3.6-venv
+RUN pip install -r setup/requirements.txt
