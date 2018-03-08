@@ -1,6 +1,8 @@
 FROM nvidia/cuda:8.0-runtime-ubuntu16.04
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
+COPY / /
+
 RUN echo "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64 /" > /etc/apt/sources.list.d/nvidia-ml.list
 
 ENV CUDNN_VERSION 6.0.21
@@ -16,7 +18,6 @@ RUN  apt-get update \
 
 
 RUN wget http://www.cs.cornell.edu/~cristian/data/cornell_movie_dialogs_corpus.zip
-COPY / /
 RUN apt-get install unzip
 RUN mkdir assignments/chatbot/data
 RUN unzip cornell_movie_dialogs_corpus.zip -d assignments/chatbot/data/.
