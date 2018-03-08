@@ -9,3 +9,13 @@ LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
 RUN apt-get update && apt-get install -y --no-install-recommends \
             libcudnn6=$CUDNN_VERSION-1+cuda8.0 && \
     rm -rf /var/lib/apt/lists/*
+
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN wget http://www.cs.cornell.edu/~cristian/data/cornell_movie_dialogs_corpus.zip
+RUN apt-get install -y unzip
+COPY / /
+RUN mkdir assignments/chatbot/data
+RUN unzip cornell_movie_dialogs_corpus.zip -d assignments/chatbot/data/.
