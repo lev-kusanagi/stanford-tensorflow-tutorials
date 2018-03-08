@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN  apt-get update \
   && apt-get upgrade -y\
-  && apt-get install -y wget \
+  && apt-get install -y wget
 
 
 RUN wget http://www.cs.cornell.edu/~cristian/data/cornell_movie_dialogs_corpus.zip
