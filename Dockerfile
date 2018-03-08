@@ -27,4 +27,4 @@ RUN apt-get update
 RUN apt-get install python3.6 -y
 RUN apt-get install python3-pip -y
 RUN apt-get install python3.6-venv -y
-RUN pip3 install -r setup/requirements.txt
+RUN python3.6 -m pip install -r setup/requirements.txt
