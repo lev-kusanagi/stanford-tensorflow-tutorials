@@ -11,11 +11,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 RUN  apt-get update \
+  && apt-get upgrade
   && apt-get install -y wget \
-  && rm -rf /var/lib/apt/lists/*
+
 
 RUN wget http://www.cs.cornell.edu/~cristian/data/cornell_movie_dialogs_corpus.zip
-RUN apt-get install -y zip
 COPY / /
+RUN apt-get install unzip
 RUN mkdir assignments/chatbot/data
 RUN unzip cornell_movie_dialogs_corpus.zip -d assignments/chatbot/data/.
