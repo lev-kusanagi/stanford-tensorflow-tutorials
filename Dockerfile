@@ -15,7 +15,7 @@ RUN  apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 RUN wget http://www.cs.cornell.edu/~cristian/data/cornell_movie_dialogs_corpus.zip
-RUN apt-get install -y unzip
+RUN apt-get install -y zip
 COPY / /
 RUN mkdir assignments/chatbot/data
 RUN unzip cornell_movie_dialogs_corpus.zip -d assignments/chatbot/data/.
